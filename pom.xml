@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
- - Copyright (C) 2018 Connectorio Sp. z o.o.
+ - Copyright (C) 2020 Connectorio Sp. z o.o.
  -
  - Licensed under the Apache License, Version 2.0 (the "License");
  - you may not use this file except in compliance with the License.
@@ -57,28 +57,28 @@
         <connection>scm:git:git@github.com:ConnectorIO/maven-parent.git</connection>
         <developerConnection>scm:git:git@github.com:ConnectorIO/maven-parent.git</developerConnection>
         <url>https://github.com/ConnectorIO/maven-parent</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <!-- properties -->
     <properties>
         <!-- Maven plugins -->
-        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <maven-reports-plugin.version>3.0.0</maven-reports-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
+        <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
-        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
 
         <mojohaus-buildhelper-plugin.version>3.0.0</mojohaus-buildhelper-plugin.version>
 
@@ -329,10 +329,17 @@
                 </configuration>
                 <reportSets>
                     <reportSet>
-                        <id>aggregate</id>
-                        <inherited>false</inherited>
+                        <id>default</id>
+                        <inherited>true</inherited>
                         <reports>
-                            <report>aggregate</report>
+                            <report>aggregate-no-fork</report>
+                        </reports>
+                    </reportSet>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <inherited>true</inherited>
+                        <reports>
+                            <report>aggregate-no-fork</report>
                         </reports>
                     </reportSet>
                 </reportSets>
