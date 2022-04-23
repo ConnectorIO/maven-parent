@@ -363,6 +363,50 @@
 
     <profiles>
         <profile>
+            <id>connectorio</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <repositories>
+                <repository>
+                    <id>co7io-public-releases</id>
+                    <url>https://repository.connectorio.cloud/repository/co7io-public-releases</url>
+                    <snapshots><enabled>false</enabled></snapshots>
+                    <releases><enabled>true</enabled></releases>
+                </repository>
+                <repository>
+                    <id>co7io-public-snapshots</id>
+                    <url>https://repository.connectorio.cloud/repository/co7io-public-snapshots</url>
+                    <snapshots><enabled>true</enabled></snapshots>
+                    <releases><enabled>false</enabled></releases>
+                </repository>
+            </repositories>
+        </profile>
+
+        <profile>
+            <id>connectorio-internal</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <repositories>
+                <repository>
+                    <id>co7io-internal-releases</id>
+                    <url>https://repository.connectorio.cloud/repository/co7io-internal-releases</url>
+                    <snapshots><enabled>false</enabled></snapshots>
+                    <releases><enabled>true</enabled></releases>
+                </repository>
+                <repository>
+                    <id>co7io-internal-snapshots</id>
+                    <url>https://repository.connectorio.cloud/repository/co7io-internal-snapshots</url>
+                    <snapshots><enabled>true</enabled></snapshots>
+                    <releases><enabled>false</enabled></releases>
+                </repository>
+            </repositories>
+        </profile>
+
+        <profile>
             <id>release</id>
 
             <build>
