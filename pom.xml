@@ -387,7 +387,7 @@
         <profile>
             <id>connectorio-internal</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
 
             <repositories>
