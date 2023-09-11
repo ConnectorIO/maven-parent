@@ -22,7 +22,7 @@
     <!-- Project identification -->
     <groupId>org.connectorio</groupId>
     <artifactId>connectorio-oss</artifactId>
-    <version>4</version>
+    <version>5-SNAPSHOT</version>
 
     <name>ConnectorIO | OSS Parent</name>
     <packaging>pom</packaging>
@@ -57,7 +57,7 @@
         <connection>scm:git:git@github.com:ConnectorIO/maven-parent.git</connection>
         <developerConnection>scm:git:git@github.com:ConnectorIO/maven-parent.git</developerConnection>
         <url>https://github.com/ConnectorIO/maven-parent</url>
-        <tag>connectorio-oss-4</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <!-- properties -->
@@ -106,7 +106,7 @@
         <maven-scm.version>1.12.0</maven-scm.version>
         <maven-scm-publish-plugin.version>3.1.0</maven-scm-publish-plugin.version>
 
-        <project.build.outputTimestamp>1694466575</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1694466579</project.build.outputTimestamp>
     </properties>
 
     <!-- Repositories -->
