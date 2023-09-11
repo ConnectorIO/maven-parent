@@ -47,6 +47,13 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - name: Dump env
+        run: >-
+          env && cat ~/.m2/settings.xml
+        env:
+          CI_RELEASE_USERNAME: ${{ secrets.CI_RELEASE_USERNAME }}
+          CI_RELEASE_PASSWORD: ${{ secrets.CI_RELEASE_PASSWORD }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Maven Prepare Release
         run: >-
           mvn -B
