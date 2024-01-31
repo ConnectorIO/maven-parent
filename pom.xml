@@ -23,11 +23,9 @@
     <groupId>org.connectorio</groupId>
     <artifactId>connectorio-oss</artifactId>
     <version>5-SNAPSHOT</version>
-
-    <name>ConnectorIO | OSS Parent</name>
     <packaging>pom</packaging>
 
-    <!-- Information about project -->
+    <name>ConnectorIO | OSS Parent</name>
     <description>Parent project for open source components developed by ConnectorIO.</description>
 
     <url>http://connectorio.org</url>
