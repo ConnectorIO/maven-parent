@@ -88,13 +88,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <snapshot.repository-id>sonatype-nexus-snapshots</snapshot.repository-id>
-        <snapshot.repository-name>Sonatype Snapshots</snapshot.repository-name>
-        <snapshot.repository-url>https://oss.sonatype.org/content/repositories/snapshots/</snapshot.repository-url>
+        <snapshot.repository-id>central-snapshots</snapshot.repository-id>
+        <snapshot.repository-name>Sonatype Central Publishing Snapshot Portal</snapshot.repository-name>
+        <snapshot.repository-url>https://central.sonatype.com/repository/maven-snapshots/</snapshot.repository-url>
 
-        <release.repository-id>sonatype-nexus-staging</release.repository-id>
-        <release.repository-name>Sonatype Central Synchronisation</release.repository-name>
-        <release.repository-url>https://oss.sonatype.org/service/local/staging/deploy/maven2</release.repository-url>
+        <release.repository-id>central</release.repository-id>
+        <release.repository-name>Sonatype Central Publishing Portal</release.repository-name>
+        <release.repository-url>https://central.sonatype.com</release.repository-url>
 
         <site.repository-id>github.com</site.repository-id>
         <site.repository-name>GitHub Pages</site.repository-name>
@@ -241,6 +241,16 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useReleaseProfile>false</useReleaseProfile>
                         <releaseProfiles>release</releaseProfiles>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.10.0</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <publishingServerId>${release.repository-id}</publishingServerId>
                     </configuration>
                 </plugin>
                 <plugin>
