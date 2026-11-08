@@ -25,13 +25,20 @@ jobs:
       contents: write
     uses: 'connectorio/gh-actions-shared/.github/workflows/release.yml@master'
     secrets:
+      MAVEN_SECRETS: >-
+        {
+        "CI_RELEASE_USERNAME": ${{ toJSON(secrets.CI_RELEASE_USERNAME) }},
+        "CI_RELEASE_PASSWORD": ${{ toJSON(secrets.CI_RELEASE_PASSWORD) }}
+        }
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      CI_RELEASE_USERNAME: ${{ secrets.CI_RELEASE_USERNAME }}
-      CI_RELEASE_PASSWORD: ${{ secrets.CI_RELEASE_PASSWORD }}
     with:
       openhab: false
-      server_id: central
+      mvn_credentials: |
+        central:CI_RELEASE_USERNAME:CI_RELEASE_PASSWORD
+      mvn_server_origins: |
+        central:https://central.sonatype.com
+        central:https://repo.maven.apache.org
       release_version: ${{ inputs.release_version }}
       development_version: ${{ inputs.development_version }}
       perform_version: ${{ inputs.perform_version }}
